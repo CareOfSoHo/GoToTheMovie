@@ -60,31 +60,29 @@ namespace GoToTheMovie
 
         public void BuyMovieTickets()
         {
-
             Console.WriteLine("Ange antal biljetter");
             int noTickets;
             int.TryParse(Console.ReadLine(), out noTickets);
 
-            bool run = true;
+            // bool run = true;
 
-            while (run)
-            {
+            // while (run)
+            // {
 
                 for (int x = 1; x <= noTickets; x++)
                 {
                     Console.WriteLine("\nBiljett nr: " + x);
-                    BuyMovieTicket();
-
+                    int price = BuyMovieTicket();
+                    ticketList.Add(new TicketPrice(price));
                 }
                 ListAllTickets();
 
-                run = false;
-            }
+            //     run = false;
+            // }
         }
 
-        public void BuyMovieTicket()
+        public int BuyMovieTicket()
         {
-
             Console.WriteLine("Ange din ålder");
             int age;
             int.TryParse(Console.ReadLine(), out age);
@@ -106,16 +104,16 @@ namespace GoToTheMovie
                 Console.WriteLine("Standardpris " + price + "kr");
             }
 
+            return price;
+            // bool run = true;
 
-            bool run = true;
+            // while (run)
+            // {
+                // TicketPrice ticketPrice = new TicketPrice(price);
+                // ticketList.Add(ticketPrice);
 
-            while (run)
-            {
-                TicketPrice ticketPrice = new TicketPrice(price);
-                ticketList.Add(ticketPrice);
-
-                break;
-            }
+                // break;
+            // }
 
         }
         private void ListAllTickets()
