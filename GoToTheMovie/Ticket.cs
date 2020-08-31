@@ -72,7 +72,7 @@ namespace GoToTheMovie
 
                 for (int x = 1; x <= noTickets; x++)
                 {
-                    Console.WriteLine("\n" + x);
+                    Console.WriteLine("\nBiljett nr: " + x);
                     BuyMovieTicket();
 
                 }
@@ -128,16 +128,17 @@ namespace GoToTheMovie
             {
                 int noofTickets = ticketList.Count;
                 int sum = 0;
-                int x = 0;
+                int i = 0;
                 Console.WriteLine(" Antal Bokade Biljetter: " + noofTickets);
                 foreach (TicketPrice item in ticketList)
                 {
-                    x++;
+                    i++;
                     Console.WriteLine("\n\t********************");
-                    Console.WriteLine("\n\t Pris för biljett nr " + x + ", " + item.thePrice + "kr ");
+                    Console.WriteLine("\n\t Pris för biljett nr " + i + ", " + item.thePrice + "kr ");
                     sum += item.thePrice;
                 }
-                Console.WriteLine("\n\t Total summa för biljetterna: " + sum);
+                Console.WriteLine("\n\t Total summa för biljetterna: " + sum + "kr");
+                ticketList.Clear();
             }
         }
 
